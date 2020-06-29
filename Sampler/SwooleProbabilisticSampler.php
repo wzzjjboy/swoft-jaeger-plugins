@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Plugins\Sampler;
+namespace Plugins\Sampler;
 
 use Jaeger\Constants;
 use Jaeger\Sampler\Sampler;

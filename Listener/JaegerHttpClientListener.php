@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Plugins\Listener;
+namespace Plugins\Listener;
 
-use App\Plugins\Concern\SpanStarterTrait;
-use App\Plugins\HttpClient\HttpEvent;
+use Plugins\Concern\SpanStarterTrait;
+use Plugins\HttpClient\HttpEvent;
 use GuzzleHttp\Psr7\Response;
-use App\Plugins\Concern\ListenerTrait;
-use App\Plugins\Manager\TracerManager;
+use Plugins\Concern\ListenerTrait;
+use Plugins\Manager\TracerManager;
 use Swoft\Bean\Annotation\Mapping\Inject;
 use Swoft\Event\Annotation\Mapping\Subscriber;
 use Swoft\Event\EventSubscriberInterface;

@@ -1,24 +1,24 @@
 <?php
 
 
-namespace App\Plugins\Listener;
+namespace Plugins\Listener;
 
 
-use App\Plugins\Concern\ListenerTrait;
-use App\Plugins\Concern\SpanStarterTrait;
-use App\Plugins\Manager\TracerManager;
+use Plugins\Concern\ListenerTrait;
+use Plugins\Concern\SpanStarterTrait;
+use Plugins\Manager\TracerManager;
 use Swoft\Bean\Annotation\Mapping\Inject;
+use Swoft\Db\DbEvent;
 use Swoft\Event\Annotation\Mapping\Subscriber;
 use Swoft\Event\EventInterface;
 use Swoft\Event\EventSubscriberInterface;
-use Swoft\Redis\RedisEvent;
 
 /**
  * Class JaegerRedisListener
  * @package App\Plugins\Listener
  * @Subscriber()
  */
-class JaegerRedisListener implements EventSubscriberInterface
+class JaegerMysqlListener implements EventSubscriberInterface
 {
     use ListenerTrait, SpanStarterTrait;
 
@@ -34,13 +34,13 @@ class JaegerRedisListener implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return  [
-            RedisEvent::BEFORE_COMMAND => 'before',
-            RedisEvent::AFTER_COMMAND => 'after',
+            DbEvent::SELECTING => 'before',
+            DbEvent::SQL_RAN => 'after',
         ];
     }
 
     public function before(EventInterface $event){
-        $this->_before($event, 'redis');
+        $this->_before($event, 'mysql');
     }
 
     public function after(EventInterface $event){

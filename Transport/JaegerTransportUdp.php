@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace App\Plugins\Transport;
+namespace Plugins\Transport;
 
 
 use Jaeger\Constants;

@@ -1,16 +1,16 @@
 <?php
 
 
-namespace App\Plugins\Manager;
+namespace Plugins\Manager;
 
 
 use OpenTracing\Span;
 use Swoft\Co;
 use Jaeger\Config;
 use OpenTracing\GlobalTracer;
-use App\Plugins\Sampler\SwooleProbabilisticSampler;
-use  App\Plugins\Transport\JaegerTransportLog;
-use  App\Plugins\Transport\JaegerTransportUdp;
+use Plugins\Sampler\SwooleProbabilisticSampler;
+use Plugins\Transport\JaegerTransportLog;
+use Plugins\Transport\JaegerTransportUdp;
 use Swoft\Bean\Annotation\Mapping\Bean;
 use const OpenTracing\Formats\TEXT_MAP;
 

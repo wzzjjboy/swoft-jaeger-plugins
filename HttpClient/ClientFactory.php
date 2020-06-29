@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Plugins\HttpClient;
+namespace Plugins\HttpClient;
 
 
 

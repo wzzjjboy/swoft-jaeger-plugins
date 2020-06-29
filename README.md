@@ -11,15 +11,28 @@
 ------
 
 
-
 #### 初始化GIT子模块
 
-- 进入app目录
-- git submodule add https://github.com/wzzjjboy/swoft-jaeger-plugins.git Plugins
+- git submodule add https://github.com/wzzjjboy/swoft-jaeger-plugins.git plugins
 - git submodule init
 - git submodule update 
 - 或者git submodule update --init --recursive
 - 子模块使数码更新需要进程目录 git pull
+
+------
+
+#### 初始化git  autload
+- 修改composer.json添加代码
+
+  ```php
+  "autoload": {      
+      "psr-4": {
+          "Plugins\\": "plugins/"
+      }
+  }
+  ```
+
+- composer dump-autoload
 
 ------
 
@@ -34,3 +47,16 @@ JAEGER_SERVER_HOST=127.0.0.1:6831 #jaeger服务端地址
 JAEGER_PNAME=jaeger-demo #应用名称
 JAEGER_OPEN=true #是否开启jaeger
 ```
+------
+
+#### 使用方法
+
+- 默认已经跟踪了redis,mysql的操作
+
+- 如果要跟踪http，则需要调用替换http客户端
+
+  ```
+  
+  ```
+
+  

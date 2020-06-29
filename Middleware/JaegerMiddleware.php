@@ -1,17 +1,17 @@
 <?php
 
 
-namespace App\Plugins\Middleware;
+namespace Plugins\Middleware;
 
 
 
 use Swoft\Co;
 use OpenTracing\Span;
-use App\Plugins\Manager\TracerManager;
+use Plugins\Manager\TracerManager;
 use Psr\Http\Message\ResponseInterface;
 use Swoft\Bean\Annotation\Mapping\Bean;
 use Swoft\Bean\Annotation\Mapping\Inject;
-use App\Plugins\Concern\SpanStarterTrait;
+use Plugins\Concern\SpanStarterTrait;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Swoft\Http\Server\Contract\MiddlewareInterface;

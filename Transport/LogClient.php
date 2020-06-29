@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Plugins\Transport;
+namespace Plugins\Transport;
 
 use Jaeger\Thrift\AgentClient;
 

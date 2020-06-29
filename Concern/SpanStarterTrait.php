@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Plugins\Concern;
+namespace Plugins\Concern;
 
 
-use App\Plugins\Manager\TracerManager;
+use Plugins\Manager\TracerManager;
 use OpenTracing\GlobalTracer;
 use OpenTracing\Span;
 use const OpenTracing\Formats\TEXT_MAP;

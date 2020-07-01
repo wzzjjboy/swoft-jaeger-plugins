@@ -36,6 +36,23 @@
 
 ------
 
+#### 配置中间件
+
+修改app/bean.php添加中间件
+
+```php
+'httpDispatcher'    => [
+        'middlewares'      => [
+			//...
+            \Plugins\Middleware\JaegerMiddleware::class,
+			//...
+        ],
+        //...
+    ],
+```
+
+
+
 #### 配置jaeger
 
 ```php
@@ -54,9 +71,3 @@ JAEGER_OPEN=true #是否开启jaeger
 - 默认已经跟踪了redis,mysql的操作
 
 - 如果要跟踪http，则需要调用替换http客户端
-
-  ```
-  
-  ```
-
-  
